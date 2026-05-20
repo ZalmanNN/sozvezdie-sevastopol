@@ -13,11 +13,13 @@ function updateHeader() {
 function closeMenu() {
   nav.classList.remove("is-open");
   menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Открыть меню");
 }
 
 menuToggle.addEventListener("click", () => {
   const isOpen = nav.classList.toggle("is-open");
   menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
 });
 
 navLinks.forEach((link) => {
